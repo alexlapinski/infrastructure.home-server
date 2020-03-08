@@ -1,0 +1,18 @@
+# 
+# @meta name: Reverse Proxy (Nginx)
+# @meta author: Alex Lapinski
+# @meta email: contact@alexlapinski.name
+# @meta description: Setup a single reverse proxy site with Nginx
+# @meta license: MIT
+#
+#
+---
+galaxy_info:
+  author: Alex Lapinski
+  description: Setup a ReverseProxy on nginx
+  license: MIT
+  min_ansible_version: 1.2
+  galaxy_tags: []
+
+dependencies:
+  - name: nginxinc.nginx

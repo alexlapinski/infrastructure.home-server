@@ -1,0 +1,37 @@
+---
+- hosts: all
+  become: yes
+  become_user: root
+  remote_user: alex
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+  handlers:
+    - name: apt-update
+      apt: update-cache=yes
+  roles:
+    - role: datadog.datadog
+      vars:
+        datadog_api_key: ***REMOVED***
+    - role: lean_delivery.java
+      transport: repositories
+      java_major_version: 8
+    - role: ksiig.plexmediaserver
+    - role: nginxinc.nginx
+    - role: geerlingguy.jenkins
+      vars:
+        jenkins_http_port: 9090
+    - role: geerlingguy.docker
+      vars:
+        docekr_
+    - role: alexlapinski.reverse-proxy
+      vars:
+        site_domain: openhab.local.net
+        target_port: 8080
+    - role: alexlapinski.reverse-proxy
+      vars:
+        site_domain: plex.local.net
+        target_port: 8080
+    - role: alexlapinski.reverse-proxy
+      vars:
+        site_domain: jenkins.local.net
+        target_port: 9090
