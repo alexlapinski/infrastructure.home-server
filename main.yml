@@ -22,7 +22,7 @@
         jenkins_http_port: 9090
     - role: geerlingguy.docker
       vars:
-        docekr_
+        docker_edition: 'ce'
     - role: alexlapinski.reverse-proxy
       vars:
         site_domain: openhab.local.net

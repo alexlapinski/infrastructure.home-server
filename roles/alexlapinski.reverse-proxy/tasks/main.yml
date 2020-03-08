@@ -1,7 +1,7 @@
 ---
 - name: Create site configuration
   template:
-    src: templates/reverse_proxy_site.conf.j2
+    src: templates/virtual_site.conf.j2
     dest: /etc/nginx/sites-available/{{ site_domain }}.conf
 
 - name: Create Symlink (Enable Site)
