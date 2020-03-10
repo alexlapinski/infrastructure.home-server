@@ -11,7 +11,7 @@
   roles:
     - role: datadog.datadog
       vars:
-        datadog_api_key: ***REMOVED***
+        datadog_api_key: **REMOVED**
     - role: lean_delivery.java
       transport: repositories
       java_major_version: 8
