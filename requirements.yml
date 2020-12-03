@@ -1,6 +1,2 @@
 - src: datadog.datadog
-- src: lean_delivery.java
-- src: ksiig.plexmediaserver
-- src: nginxinc.nginx
-- src: geerlingguy.jenkins
 - src: geerlingguy.docker

@@ -1,0 +1,21 @@
+---
+- hosts: all
+  become: yes
+  become_user: root
+  remote_user: alex
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+  handlers:
+    - name: apt-update
+      apt: update-cache=yes
+  roles:
+    - role: datadog.datadog
+      vars:
+        datadog_api_key: lookup('aws_ssm', '/api_keys/datadog')
+    - role: geerlingguy.docker
+      vars:
+        docker_edition: 'ce'
+    
+    # - role: ksiig.plexmediaserver -- Docker / Helm
+    # - role: nginxinc.nginx -- Docker / Helm
+    

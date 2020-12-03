@@ -60,7 +60,11 @@ dry-run: ## make dry-run [playbook=setup] [env=hosts] [tag=<ansible tag>] [limit
 
 .PHONY: run
 run: ## make run [playbook=setup] [env=hosts] [tag=<ansible tag>] [limit=<ansible host limit>] [args=<ansible-playbook arguments>] # Run a playbook
-	@env=$(env) ansible-playbook --inventory-file="$(env)" --diff $(opts) "$(playbook).yml"
+	@env=$(env) ansible-playbook \
+		--ask-pass \
+		--inventory-file="$(env)" \
+		--diff $(opts) \
+		"$(playbook).yml"
 
 .PHONY: run_debug
 run_debug: ## make run [playbook=setup] [env=hosts] [tag=<ansible tag>] [limit=<ansible host limit>] [args=<ansible-playbook arguments>] # Run a playbook
